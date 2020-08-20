@@ -1,0 +1,166 @@
+\documentclass{beamer}
+
+%encoding
+%--------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%--------------------------------------
+
+%Portuguese-specific commands
+%--------------------------------------
+\usepackage[portuguese]{babel}
+%--------------------------------------
+
+%Hyphenation rules
+%--------------------------------------
+\usepackage{hyphenat}
+\hyphenation{mate-mática recu-perar}
+%--------------------------------------
+
+\usepackage{wrapfig}
+\usepackage{graphicx}
+\usepackage{biblatex}
+
+% \usepackage[
+% backend=biber,
+% style=alphabetic,
+% sorting=ynt
+% ]{biblatex}
+\addbibresource{latex-beamer-template.bib}
+
+\graphicspath{ {../../images/} {.images} }
+
+% \usefonttheme{structuresmallcapsserif}
+\usetheme{Warsaw}
+% \usecolortheme{beetle}
+\usecolortheme{seagull}
+
+% \setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{mini frames}{}
+\setbeamertemplate{headline}{}
+% \renewcommand*{\slideentry}[6]{}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\setbeamercolor{block body alerted}{bg=yellow!10, bg=alerted text.fg!10}
+\setbeamercolor{block title alerted}{bg=yellow!20, bg=alerted text.fg!20}
+\setbeamercolor{block body}{bg=structure!10}
+\setbeamercolor{block title}{bg=structure!20}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamercolor{block title example}{bg=green!20}
+
+% Information to be included in the title page:
+\title{Title of the Document}
+\subtitle{Subtitle}
+
+\author{Author Name}
+% Para a indicação de mais de um autor
+% {A.~B.~Arthur\inst{1} \and J.~Doe\inst{2}}
+
+\institute{Institution Name}
+% Para indicação de mais de uma instituição de ensino.
+
+% \institute[VFU]
+% {
+%   \inst{1}%
+%   Faculty of Physics\\
+%   Very Famous University
+%   \and
+%   \inst{2}%
+%   Faculty of Chemistry\\
+%   Very Famous University
+% }
+
+\date{\today}
+
+\begin{document}
+
+% Slide inicial com título
+\frame{\titlepage}
+
+% Índice
+%\begin{frame}
+%    \frametitle{Index}
+\frame{\tableofcontents}
+%\end{frame}
+
+% Exibido, no começo de cada seção, o tópico corrente
+% \AtBeginSection[]
+% {
+%   \begin{frame}
+%     \frametitle{New Topic}
+%     \tableofcontents[currentsection]
+%   \end{frame}
+% }
+
+\section{sec-1}
+
+\begin{frame}
+    \frametitle{About me}
+    \begin{wrapfigure}{r}{0.25\textwidth} %this figure will be at the right
+        \centering
+        \caption{My picture. =)}
+        \includegraphics[width=0.25\textwidth]{avatar.jpeg}
+        \label{fig:avatar}
+    \end{wrapfigure}
+
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+    Curabitur eget tortor at quam ullamcorper pellentesque.
+    Morbi ac enim eu ante viverra elementum id viverra justo.
+    Mauris sagittis mauris sed laoreet maximus. 
+    \cite{dirac}
+
+%    \begin{figure}[h]
+%        \caption{That's me. =)}
+%        \includegraphics[width=0.5\textwidth, scale=0.25]{avatar.jpeg}
+%    \end{faigure}
+
+    \listoffigures
+
+\end{frame}
+
+\section{sec-2}
+
+\begin{frame}
+\frametitle{Frame title}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+Curabitur eget tortor at quam ullamcorper pellentesque.
+Morbi ac enim eu ante viverra elementum id viverra justo.
+Mauris sagittis mauris sed laoreet maximus.
+
+Curabitur lobortis lectus vitae nisl rhoncus maximus at in lacus.
+Pellentesque maximus nulla ac vehicula mollis.
+
+\end{frame}
+
+\section{sec-3}
+
+\begin{frame}
+    \frametitle{Highlights}
+    
+    In this slide, some important text will be
+    \alert{highlighted} because it's important.
+    Please, don't abuse it.
+    
+    \begin{block}{Remark}
+    Sample text. Remark.
+    \end{block}
+    
+    \begin{alertblock}{Important}
+    Sample text in red box. Alert.
+    \end{alertblock}
+    
+    \begin{examples}
+    Sample text in green box. The title of the block is ``Examples".
+    \end{examples}
+
+    See my avatar: \ref{fig:avatar}
+
+\end{frame}
+
+\frame{\printbibliography}
+
+\end{document}
