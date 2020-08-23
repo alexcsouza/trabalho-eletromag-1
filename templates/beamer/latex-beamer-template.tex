@@ -94,44 +94,47 @@
 %     \tableofcontents[currentsection]
 %   \end{frame}
 % }
-\section{sec-1}
+\section{Introdução}
 \begin{frame}
-    \frametitle{Exemplo de Campo Plotado}
-    
-    \begin{tikzpicture}
-        \begin{axis}[
-        xmin = -4, xmax = 4,
-        ymin = -4, ymax = 4,
-        zmin = 0, zmax = 1,
-        axis equal image,
-        xtick distance = 1,
-        ytick distance = 1,
-        view = {0}{90},
-        scale = 1.25,
-        title = {\bf Vector Field $F = [-y,x]$},
-        xlabel = {$x$},
-        ylabel = {$y$},
-        colormap/viridis,
-        colorbar,
-        colorbar style = {
-        ylabel = {Vector Length}
-        }
-        ]
-        \addplot3[
-        point meta = {sqrt(x^2+y^2)},
-        quiver = {
-        u = {-y/sqrt(x^2+y^2)},
-        v = {x/sqrt(x^2+y^2)},
-        scale arrows = 0.25,
-        },
-        quiver/colored = {mapped color},
-        -stealth,
-        domain = -4:4,
-        domain y = -4:4,
-        ] {0};
-        \end{axis}
-    \end{tikzpicture}
-\end{frame}
+    \frametitle{Introdução}
+    O metodo da idependencia do caminho  é possivel apenas em  campos conservativos. Um campo é conservativo quando ele é obtido atraves do calculo do vetor gradiente de alguma função. 
+    O campo eletrico é um exemplo de campo conservativo.
+
+
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%         xmin = -4, xmax = 4,
+%         ymin = -4, ymax = 4,
+%         zmin = 0, zmax = 1,
+%         axis equal image,
+%         xtick distance = 1,
+%         ytick distance = 1,
+%         view = {0}{90},
+%         scale = 1.25,
+%         title = {\bf Vector Field $F = [-y,x]$},
+%         xlabel = {$x$},
+%         ylabel = {$y$},
+%         colormap/viridis,
+%         colorbar,
+%         colorbar style = {
+%         ylabel = {Vector Length}
+%         }
+%         ]
+%         \addplot3[
+%         point meta = {sqrt(x^2+y^2)},
+%         quiver = {
+%         u = {-y/sqrt(x^2+y^2)},
+%         v = {x/sqrt(x^2+y^2)},
+%         scale arrows = 0.25,
+%         },
+%         quiver/colored = {mapped color},
+%         -stealth,
+%         domain = -4:4,
+%         domain y = -4:4,
+%         ] {0};
+%         \end{axis}
+%     \end{tikzpicture}
+% \end{frame}
 
 % \begin{frame}
 %     \frametitle{About me}
@@ -158,22 +161,29 @@
 % 
 % \end{frame}
 % 
-\section{sec-2}
+%\section{sec-2}
 
 \begin{frame}
-\frametitle{Frame title}
-
-This agent thus does work at a rate $V_1I_1=-{\cal E}_1I_1$. The total work 
-    that it does is
+    \frametitle{Introdução}
+    A independencia do caminho diz que, em campos conservativos, quaisquer integrais de linha que possuem os mesmos pontos inicial e final resultam em um mesmo valor, independente da curva 
+    entre eles. Utilizando o trabalho como exemplo:
+    
     \begin{equation}
-        W_1=-\int dtI_1{\cal E}_1=\frac{I_1}{c}\int dt
+    \int_{a}^b f(x)dx
     \end{equation}
-    where $F_1$ is the total change of the flux through the loop. We may 
-    also express our result as
 
-\begin{equation}
-    a^{2}= b^{2}+c^{2}
-\end{equation}
+
+%    This agent thus does work at a rate $V_1I_1=-{\cal E}_1I_1$. The total work 
+%    that it does is
+%    \begin{equation}
+%        W_1=-\int dtI_1{\cal E}_1=\frac{I_1}{c}\int dt
+%    \end{equation}
+%    where $F_1$ is the total change of the flux through the loop. We may 
+%    also express our result as
+% 
+% \begin{equation}
+%     a^{2}= b^{2}+c^{2}
+% \end{equation}
 
 \end{frame}
 
