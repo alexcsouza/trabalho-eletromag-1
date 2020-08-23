@@ -26,6 +26,11 @@
 %\usepackage{graphicx}
 \usepackage{biblatex}
 
+\usepackage{caption}
+ 
+\DeclareCaptionFormat{myformat}{\fontsize{5}{6}\selectfont#1#2#3}
+\captionsetup[figure]{format=myformat, labelformat=empty, textfont={it}} 
+
 % \usepackage[
 % backend=biber,
 % style=alphabetic,
@@ -111,9 +116,6 @@
 %         ytick distance = 1,
 %         view = {0}{90},
 %         scale = 1.25,
-%         title = {\bf Vector Field $F = [-y,x]$},
-%         xlabel = {$x$},
-%         ylabel = {$y$},
 %         colormap/viridis,
 %         colorbar,
 %         colorbar style = {
@@ -159,7 +161,7 @@
 % 
 %     \listoffigures
 % 
-% \end{frame}
+\end{frame}
 % 
 %\section{sec-2}
 
@@ -167,41 +169,30 @@
     \frametitle{Introdução}
     A independencia do caminho diz que, em campos conservativos, quaisquer integrais de linha que possuem os mesmos pontos inicial e final resultam em um mesmo valor, independente da curva 
     entre eles. Utilizando o trabalho como exemplo:
-    
-    \begin{equation}
-    \int_{a}^b \vec{F} d\vec{r}
-    \end{equation}
-
-
-%    This agent thus does work at a rate $V_1I_1=-{\cal E}_1I_1$. The total work 
-%    that it does is
-%    \begin{equation}
-%        W_1=-\int dtI_1{\cal E}_1=\frac{I_1}{c}\int dt
-%    \end{equation}
-%    where $F_1$ is the total change of the flux through the loop. We may 
-%    also express our result as
-% 
-% \begin{equation}
-%     a^{2}= b^{2}+c^{2}
-% \end{equation}
+    \begin{figure}
+    $
+        \mathit{\int_{a}^b \overrightarrow{F} d\overrightarrow{r}}
+    $
+    \caption{Trabalho realizado por uma força $\vec{F}$ ao longo de $\vec{r}$} \label{fig:1}
+    \end{figure}
 
 \end{frame}
 
 \section{Exemplos}
 
 \begin{frame}
-    \frametitle{Exemplo 1}
+    \frametitle{Exemplo 1} 
 
-        Dado o campo:
-        $$
-            
+        Dado o campo:\\
+        
+            $
             \int{} \vec{F} d\vec{r} =  
             \begin{cases}
             x(n),\\
             x(n-1)\\
             x(n-1)
             \end{cases}
-        $$
+            $
         
 %     In this slide, some important text will be
 %     \alert{highlighted} because it's important.
