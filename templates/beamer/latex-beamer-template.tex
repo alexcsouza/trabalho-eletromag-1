@@ -11,10 +11,10 @@
 \usepackage[portuguese]{babel}
 %--------------------------------------
 
-%\usepackage{tikz}
-%\usepackage{pgfplots}
-%\pgfplotsset{compat = newest}
-%\usepgfplotslibrary{colormaps}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat = newest}
+\usepgfplotslibrary{colormaps}
 
 %Hyphenation rules
 %--------------------------------------
@@ -22,14 +22,16 @@
 \hyphenation{mate-mática recu-perar}
 %--------------------------------------
 
-%\usepackage{wrapfig}
-%\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{graphicx}
 \usepackage{biblatex}
+\usepackage[document]{ragged2e}
 
-\usepackage{caption}
- 
-\DeclareCaptionFormat{myformat}{\fontsize{5}{6}\selectfont#1#2#3}
-\captionsetup[figure]{format=myformat, labelformat=empty, textfont={it}} 
+%\DeclareCaptionFormat{myformat}{\fontsize{4}{5}\selectfont#1#2#3}
+\usepackage[font=scriptsize,labelformat=empty,labelfont=it,textfont=it]{caption}
+ \def\vec{\mathaccent "017E\relax }
+
+%\captionsetup[figure]{format=myformat, labelformat=empty} 
 
 % \usepackage[
 % backend=biber,
@@ -101,11 +103,19 @@
 % }
 \section{Introdução}
 \begin{frame}
-    \frametitle{Introdução}
-    O metodo da idependencia do caminho  é possivel apenas em  campos conservativos. Um campo é conservativo quando ele é obtido atraves do calculo do vetor gradiente de alguma função. 
-    O campo eletrico é um exemplo de campo conservativo.
+    \frametitle{O Trabalho (W)}
+    
+    O trabalho é a grandeza física associada a mudança de energia. 
+    Ele acontece quando aplicamos uma força sobre um corpo e este sofre um deslocamento. 
+    O trabalho de uma força constante pode ser escrito como: 
+    \begin{equation}\label{eq:trabalho-constante}
+    W = F * d * cos(\theta)
+    \end{equation}
 
-
+    Já o trabalho de uma força não constante pode ser escrito como: 
+    \begin{equation}\label{trabalho-nao-constante}
+    W = \mathit{\int_{a}^b \vec{F} d\vec{r}}
+    \end{equation}
 %     \begin{tikzpicture}
 %         \begin{axis}[
 %         xmin = -4, xmax = 4,
@@ -166,34 +176,102 @@
 %\section{sec-2}
 
 \begin{frame}
-    \frametitle{Introdução}
-    A independencia do caminho diz que, em campos conservativos, quaisquer integrais de linha que possuem os mesmos pontos inicial e final resultam em um mesmo valor, independente da curva 
-    entre eles. Utilizando o trabalho como exemplo:
-    \begin{figure}
-    $
-        \mathit{\int_{a}^b \overrightarrow{F} d\overrightarrow{r}}
-    $
-    \caption{Trabalho realizado por uma força $\vec{F}$ ao longo de $\vec{r}$} \label{fig:1}
-    \end{figure}
+    \frametitle{Campos Elétricos e Campos Conservativos}
+    
+    O \textbf{método da idependência do caminho} é possivel apenas em campos conservativos. 
+    Um campo é conservativo quando ele é obtido atraves do cálculo do vetor gradiente de uma função. 
+    O campo elétrico é um exemplo de campo conservativo.
+    
+%    \begin{figure}
+%    $$
+%        \mathit{\int_{a}^b \vec{F} d\vec{r}}
+%    $$
+%    \caption{Trabalho realizado por uma força $\vec{F}$ ao longo de $\vec{r}$}\label{fig:1}
+%    \end{figure}
 
 \end{frame}
+
+\begin{frame}
+    \frametitle{Campos Elétricos e Campos Conservativos}
+    
+    
+    \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+        \vspace{-35pt}
+        \centering
+        \caption{}
+        \includegraphics[width=0.30\textwidth]{grafico-trabalho.png}
+        \label{fig:grafico-trabalho}
+    \end{wrapfigure}
+    
+    A \textbf{independencia do caminho} diz que, em campos conservativos, quaisquer integrais de 
+    linha que possuemos mesmos pontos inicial e final resultam em um mesmo valor, independente da curva entre eles. 
+    Utilizando o trabalho como exemplo:  
+    \hfill \break
+    \hfill \break
+    %\begin{equation}\label{trabalho-nao-constante}
+    $    
+        W = \mathit{\int_{c_1} \vec{F} d\vec{r}} = f(b) - f(a) 
+        \hfill \break
+        W = \mathit{\int_{c_2} \vec{F} d\vec{r}} = f(b) - f(a) 
+    $
+    %\end{equation}
+
+\end{frame}
+
+
+% \begin{frame}
+%     \begin{tikzpicture}
+%         \begin{axis}[
+%         xmin = -10, xmax = 10,
+%         ymin = -10, ymax = 10,
+%         zmin = 0, zmax = 1,
+%         axis equal image,
+%         xtick distance = 2,
+%         ytick distance = 2,
+%         view = {0}{100},
+%         scale = 0.75,
+%         colormap/viridis
+%         ]
+%         \addplot3[
+%         point meta = {sqrt(x^2+y^2)},
+%         quiver = {
+%         u = {x^2/( 1 - t^2, t )},
+%         v = {\cos(y)/( 1 - t^2, t )},
+%         scale arrows = 1,
+%         },
+%         quiver/colored = {mapped color},
+%         -stealth,
+%         domain = -10:10,
+%         domain y = -10:10,
+%         ] {0};
+%         \end{axis}
+% \end{tikzpicture}
+% \end{frame}
 
 \section{Exemplos}
 
 \begin{frame}
     \frametitle{Exemplo 1} 
 
-        Dado o campo:\\
-        
-            $
-            \int{} \vec{F} d\vec{r} =  
-            \begin{cases}
+    \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+        \vspace{-35pt}
+        \centering
+        \caption{}
+        \includegraphics[width=0.30\textwidth]{grafico-exemplo-1.png}
+        \label{fig:grafico-exemplo1}
+    \end{wrapfigure}
+
+    Dado o campo conservativo $ F(x, y) = ( x^2, \cos(y) ) $, calcule o trabalho de deslocamento sobre a 
+    curva $ c_1(t) = ( 1 - t^2, t ) $ que tem ponto inicial $ A( 0, -1) $ e final $ B( 0, 1) $ [ -1, 1 ].
+
+    $
+        \int{} \vec{F} d\vec{r} =  
+        \begin{cases}
             x(n),\\
             x(n-1)\\
             x(n-1)
-            \end{cases}
-            $
-        
+        \end{cases}
+    $
 %     In this slide, some important text will be
 %     \alert{highlighted} because it's important.
 %     Please, don't abuse it.
