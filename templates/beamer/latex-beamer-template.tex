@@ -11,6 +11,8 @@
 \usepackage[portuguese]{babel}
 %--------------------------------------
 
+\usepackage{amsmath}
+
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat = newest}
@@ -25,12 +27,22 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{biblatex}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\urlstyle{same}
+
 \usepackage[document]{ragged2e}
 
 %\DeclareCaptionFormat{myformat}{\fontsize{4}{5}\selectfont#1#2#3}
 \usepackage[font=scriptsize,labelformat=empty,labelfont=it,textfont=it]{caption}
  \def\vec{\mathaccent "017E\relax }
 
+ 
 %\captionsetup[figure]{format=myformat, labelformat=empty} 
 
 % \usepackage[
@@ -248,12 +260,12 @@
 % \end{tikzpicture}
 % \end{frame}
 
-\section{Exemplos}
+\section{Exemplo}
 
 \begin{frame}
-    \frametitle{Exemplo 1} 
+    \frametitle{Exemplo} 
 
-    \begin{wrapfigure}{r}{0.4\textwidth} %this figure will be at the right
+    \begin{wrapfigure}{r}{0.3\textwidth} %this figure will be at the right
         \vspace{-35pt}
         \centering
         \caption{}
@@ -262,14 +274,15 @@
     \end{wrapfigure}
 
     Dado o campo conservativo $ F(x, y) = ( x^2, \cos(y) ) $, calcule o trabalho de deslocamento sobre a 
-    curva $ c_1(t) = ( 1 - t^2, t ) $ que tem ponto inicial $ A( 0, -1) $ e final $ B( 0, 1) $ [ -1, 1 ].
-
+    curva $ c_1(t) = ( 1 - t^2, t ) $ que tem ponto inicial $ A(0, -1) $ e final $ B(0, 1) $:
+    \hfill \break
+    \hfill \break
     $
         \int{} \vec{F} d\vec{r} =  
         \begin{cases}
-            x(n),\\
-            x(n-1)\\
-            x(n-1)
+            F(x, y) = ( x^2, \cos(y) ),\\
+            c_1 = ( 1 - t^2, t) &sendo \; t \; \epsilon \; [ -1, 1 ] \; e\\
+            c_1 = ( 0, t)       &sendo \; t \; \epsilon \; [ -1, 1 ] \\
         \end{cases}
     $
 %     In this slide, some important text will be
@@ -290,6 +303,89 @@
 
 \end{frame}
 
-\frame{\printbibliography}
+\begin{frame}
+    \frametitle{Resolução - Exemplo} 
+    Usando $ c_1 $: \\
+    
+    $ F(x, y) = ( x^2, \cos(y) ) = (( 1 - t^2 ), \cos(t) ) $
+    \hfill \break
+    $ d\vec{r} $
+    \hfill \break
+    $ c(t) = ( 1 - t^2, t ) = ( 1 - (-1)^2 , 1) = ( 0, 1 ) $
+    \hfill \break
+    %\begin{equation}
+    \begin{align*}   
+    \int_{c_1} \vec{F} d\vec{r} &= \int_{-1}^1 (( 1 - t^2)^2, \cos(t) ) \cdot ( 0, 1 ) dt \\
+    \int_{c_1} \vec{F} d\vec{r} &= \int_{-1}^1 \cos(t) dt  \\
+    \int_{c_1} \vec{F} d\vec{r} &= \sin(t)\vert_{-1}^{1} \\
+    \int_{c_1} \vec{F} d\vec{r} &= \sin(1) - \sin(-1) \\
+    \int_{c_1} \vec{F} d\vec{r} &= 2 * \sin(1) = 0 \\
+    \end{align*}
+    %\end{equation}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo} 
+
+    \begin{wrapfigure}{r}{0.3\textwidth} %this figure will be at the right
+        \vspace{-35pt}
+        \centering
+        \caption{}
+        \includegraphics[width=0.30\textwidth]{grafico-exemplo-2.png}
+        \label{fig:grafico-exemplo1}
+    \end{wrapfigure}
+
+    Utilizando a independencia do caminho podemos calcular a mesma integral utilizando 
+    a reta $ c_2(t) = ( 0, t) $, que liga os pontos $ A $ e $ B $.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Resolução - Exemplo} 
+    Usando $ c_2 $: \\
+    
+    $ F(x, y) = ( x^2, \cos(y) ) = ( 0, \cos(t) ) $
+    \hfill \break
+    $ d\vec{r} $
+    \hfill \break
+    $ c(t) = ( 0, t ) = ( 0, 1 ) $
+    \hfill \break
+    
+    \begin{align*}   
+    \int_{c_2} \vec{F} d\vec{r} &= \int_{-1}^1 (0, \cos(t) ) \cdot ( 0, 1 ) dt \\
+    \int_{c_2} \vec{F} d\vec{r} &= \int_{-1}^1 \cos(t) dt  \\
+    \int_{c_2} \vec{F} d\vec{r} &= \sin(t)\vert_{-1}^{1} \\
+    \int_{c_2} \vec{F} d\vec{r} &= \sin(1) - \sin(-1) \\
+    \int_{c_2} \vec{F} d\vec{r} &= 2 * \sin(1) = 0 \\
+    \end{align*}
+    
+\end{frame}
+
+\nocite{*}
+\begin{frame}[noframenumbering,plain,allowframebreaks]{Referências}
+    \begin{thebibliography}{10}
+        \bibitem{young}[Física III - Eletromagnetismo, 2015]
+        YOUNG - FREEDMAN.
+        \newblock 9788543018157,
+        \newblock Pearson.
+        
+        \bibitem{khanacademy}[Campos vetoriais conservativos]
+        \newblock \url{https://pt.khanacademy.org/math/multivariable-calculus/integrating-multivariable-functions/line-integrals-in-vector-fields-articles/a/conservative-fields}
+             
+        \bibitem{youtube1}[Integrais de Linha - Independência do Caminho]
+        \newblock Responde Aí.
+        \newblock \url{https://www.youtube.com/watch?v=ONpa0kJ5TAs}
+             
+        \bibitem{youtube2}[Integral de Linha de Função Vetorial (VETORIAL)]
+        \newblock Toda a Matemática
+        \newblock \url{https://www.youtube.com/watch?v=r_NwdXff0Ok}
+
+        \bibitem{youtube2}[Campo Conservativo (VETORIAL)]
+        \newblock Toda a Matemática
+        \newblock \url{https://www.youtube.com/watch?v=R1xmPwTq7Q0}
+        
+    \end{thebibliography}
+\end{frame}
+
 
 \end{document}
