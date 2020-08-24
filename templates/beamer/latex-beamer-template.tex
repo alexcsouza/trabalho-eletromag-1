@@ -38,31 +38,17 @@
 
 \usepackage[document]{ragged2e}
 
-%\DeclareCaptionFormat{myformat}{\fontsize{4}{5}\selectfont#1#2#3}
 \usepackage[font=scriptsize,labelformat=empty,labelfont=it,textfont=it]{caption}
  \def\vec{\mathaccent "017E\relax }
 
- 
-%\captionsetup[figure]{format=myformat, labelformat=empty} 
-
-% \usepackage[
-% backend=biber,
-% style=alphabetic,
-% sorting=ynt
-% ]{biblatex}
 \addbibresource{latex-beamer-template.bib}
 
 \graphicspath{ {../../images/} {.images} }
 
-% \usefonttheme{structuresmallcapsserif}
 \usetheme{Warsaw}
-% \usecolortheme{beetle}
 \usecolortheme{seagull}
 
-% \setbeamertemplate{navigation symbols}{}
-% \setbeamertemplate{mini frames}{}
 \setbeamertemplate{headline}{}
-% \renewcommand*{\slideentry}[6]{}
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{subsection in toc}[subsections numbered]
 
@@ -96,23 +82,10 @@
 
 \begin{document}
 
-% Slide inicial com título
 \frame{\titlepage}
 
-% Índice
-%\begin{frame}
-%    \frametitle{Index}
 \frame{\tableofcontents}
-%\end{frame}
 
-% Exibido, no começo de cada seção, o tópico corrente
-% \AtBeginSection[]
-% {
-%   \begin{frame}
-%     \frametitle{New Topic}
-%     \tableofcontents[currentsection]
-%   \end{frame}
-% }
 \section{Introdução}
 \begin{frame}
     \frametitle{O Trabalho (W)}
@@ -128,64 +101,8 @@
     \begin{equation}\label{trabalho-nao-constante}
     W = \mathit{\int_{a}^b \vec{F} d\vec{r}}
     \end{equation}
-%     \begin{tikzpicture}
-%         \begin{axis}[
-%         xmin = -4, xmax = 4,
-%         ymin = -4, ymax = 4,
-%         zmin = 0, zmax = 1,
-%         axis equal image,
-%         xtick distance = 1,
-%         ytick distance = 1,
-%         view = {0}{90},
-%         scale = 1.25,
-%         colormap/viridis,
-%         colorbar,
-%         colorbar style = {
-%         ylabel = {Vector Length}
-%         }
-%         ]
-%         \addplot3[
-%         point meta = {sqrt(x^2+y^2)},
-%         quiver = {
-%         u = {-y/sqrt(x^2+y^2)},
-%         v = {x/sqrt(x^2+y^2)},
-%         scale arrows = 0.25,
-%         },
-%         quiver/colored = {mapped color},
-%         -stealth,
-%         domain = -4:4,
-%         domain y = -4:4,
-%         ] {0};
-%         \end{axis}
-%     \end{tikzpicture}
-%\end{frame}
 
-% \begin{frame}
-%     \frametitle{About me}
-%     \begin{wrapfigure}{r}{0.25\textwidth} %this figure will be at the right
-%         \centering
-%         \caption{My picture. =)}
-%         \includegraphics[width=0.25\textwidth]{avatar.jpeg}
-%         \label{fig:avatar}
-%     \end{wrapfigure}
-% 
-%     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-% 
-%     Curabitur eget tortor at quam ullamcorper pellentesque.
-%     Morbi ac enim eu ante viverra elementum id viverra justo.
-%     Mauris sagittis mauris sed laoreet maximus. 
-%     \cite{dirac}
-% 
-% %    \begin{figure}[h]
-% %        \caption{That's me. =)}
-% %        \includegraphics[width=0.5\textwidth, scale=0.25]{avatar.jpeg}
-% %    \end{faigure}
-% 
-%     \listoffigures
-% 
 \end{frame}
-% 
-%\section{sec-2}
 
 \begin{frame}
     \frametitle{Campos Elétricos e Campos Conservativos}
@@ -193,13 +110,6 @@
     O \textbf{método da idependência do caminho} é possivel apenas em campos conservativos. 
     Um campo é conservativo quando ele é obtido atraves do cálculo do vetor gradiente de uma função. 
     O campo elétrico é um exemplo de campo conservativo.
-    
-%    \begin{figure}
-%    $$
-%        \mathit{\int_{a}^b \vec{F} d\vec{r}}
-%    $$
-%    \caption{Trabalho realizado por uma força $\vec{F}$ ao longo de $\vec{r}$}\label{fig:1}
-%    \end{figure}
 
 \end{frame}
 
@@ -216,7 +126,7 @@
     \end{wrapfigure}
     
     A \textbf{independencia do caminho} diz que, em campos conservativos, quaisquer integrais de 
-    linha que possuemos mesmos pontos inicial e final resultam em um mesmo valor, independente da curva entre eles. 
+    linha que possuem os mesmos pontos inicial e final resultam em um mesmo valor, independente da curva entre eles. 
     Utilizando o trabalho como exemplo:  
     \hfill \break
     \hfill \break
@@ -229,36 +139,6 @@
     %\end{equation}
 
 \end{frame}
-
-
-% \begin{frame}
-%     \begin{tikzpicture}
-%         \begin{axis}[
-%         xmin = -10, xmax = 10,
-%         ymin = -10, ymax = 10,
-%         zmin = 0, zmax = 1,
-%         axis equal image,
-%         xtick distance = 2,
-%         ytick distance = 2,
-%         view = {0}{100},
-%         scale = 0.75,
-%         colormap/viridis
-%         ]
-%         \addplot3[
-%         point meta = {sqrt(x^2+y^2)},
-%         quiver = {
-%         u = {x^2/( 1 - t^2, t )},
-%         v = {\cos(y)/( 1 - t^2, t )},
-%         scale arrows = 1,
-%         },
-%         quiver/colored = {mapped color},
-%         -stealth,
-%         domain = -10:10,
-%         domain y = -10:10,
-%         ] {0};
-%         \end{axis}
-% \end{tikzpicture}
-% \end{frame}
 
 \section{Exemplo}
 
@@ -285,21 +165,6 @@
             c_1 = ( 0, t)       &sendo \; t \; \epsilon \; [ -1, 1 ] \\
         \end{cases}
     $
-%     In this slide, some important text will be
-%     \alert{highlighted} because it's important.
-%     Please, don't abuse it.
-%     
-%     \begin{block}{Genérico}
-%     Bloco ``Genérico"
-%     \end{block}
-%     
-%     \begin{alertblock}{Importante}
-%     Bloco amarelo para ``Atenção".
-%     \end{alertblock}
-%     
-%     \begin{examples}{Boas Práticas}
-%     Bloco verde para ``Boas Práticas".
-%     \end{examples}
 
 \end{frame}
 
@@ -313,15 +178,15 @@
     \hfill \break
     $ c(t) = ( 1 - t^2, t ) = ( 1 - (-1)^2 , 1) = ( 0, 1 ) $
     \hfill \break
-    %\begin{equation}
+
     \begin{align*}   
     \int_{c_1} \vec{F} d\vec{r} &= \int_{-1}^1 (( 1 - t^2)^2, \cos(t) ) \cdot ( 0, 1 ) dt \\
     \int_{c_1} \vec{F} d\vec{r} &= \int_{-1}^1 \cos(t) dt  \\
     \int_{c_1} \vec{F} d\vec{r} &= \sin(t)\vert_{-1}^{1} \\
     \int_{c_1} \vec{F} d\vec{r} &= \sin(1) - \sin(-1) \\
-    \int_{c_1} \vec{F} d\vec{r} &= 2 * \sin(1) = 0 \\
+    \int_{c_1} \vec{F} d\vec{r} &= 2 * \sin(1) \\
     \end{align*}
-    %\end{equation}
+
 \end{frame}
 
 \begin{frame}
@@ -356,7 +221,7 @@
     \int_{c_2} \vec{F} d\vec{r} &= \int_{-1}^1 \cos(t) dt  \\
     \int_{c_2} \vec{F} d\vec{r} &= \sin(t)\vert_{-1}^{1} \\
     \int_{c_2} \vec{F} d\vec{r} &= \sin(1) - \sin(-1) \\
-    \int_{c_2} \vec{F} d\vec{r} &= 2 * \sin(1) = 0 \\
+    \int_{c_2} \vec{F} d\vec{r} &= 2 * \sin(1) \\
     \end{align*}
     
 \end{frame}
