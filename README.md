@@ -1,7 +1,7 @@
 
-# A Independência do Caminho na Integral do Trabalho - Eletromagnetismo - Trabalho 1}
+# A Independência do Caminho na Integral do Trabalho - Eletromagnetismo - Trabalho 1
 
-Trabalho realizado para a disciplina Fundamentos de Eletromagnetismo ministrado pelo professor Gustavo Guerrero (UFMG).
+Trabalho realizado para a disciplina `Fundamentos de Eletromagnetismo` ministrado pelo professor Gustavo Guerrero (UFMG).
 
 ## Grupo 16
     
